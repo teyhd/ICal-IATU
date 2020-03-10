@@ -14,9 +14,9 @@ function creator(param){
         cal.createEvent({
             start: new Date(param[i].start),
             end: new Date(param[i].end),
-            summary: param[i].subject,
-            description: param[i].subject,
-            location: 'ИАТУ'
+            summary: `${param[i].subject} ${param[i].audience} ${param[i].teacher}`,
+            description: `${param[i].subject} ${param[i].audience} ${param[i].teacher}`,
+            location: 'Институт авиационных технологий и управления, пр-т. Созидателей, 13А, Ульяновск, Ульяновская обл., Россия, 432059'
         });
     }
     return true;
@@ -57,7 +57,7 @@ process.on('uncaughtException', (err) => {
             description: 'It works ;)',
             location: 'ИАТУ'*/
             
-var events = ["2020-03-02","2020-03-03","2020-03-04","2020-03-05","2020-03-06","2020-03-07"]; 
+var events = ["2020-03-10"]; 
 for(let i=0;i<events.length;i++){
     setTimeout(function() {rasp(events[i]); }, 1000*2);
 }
